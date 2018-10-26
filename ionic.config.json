@@ -1,0 +1,7 @@
+{
+  "name": "rechnerIonic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

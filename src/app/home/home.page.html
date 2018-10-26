@@ -1,0 +1,80 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      IOS Rechner Kopie
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+<ion-content>
+  <div class="body-style">
+  <div class="wrapper">
+
+    <div class="label display-field"
+         [ngClass]="{ 'display-font-standard': scaling === 0,
+        'display-font-tiny': scaling === 1 }">
+      {{displayContent}}
+    </div>
+
+    <button class="calculator-button special-button"
+            (click)="resetButton()"
+            type="button">{{deleteButton}}
+    </button>
+
+    <button class="calculator-button special-button"
+            (click)="plusMinus()"
+            type="button">
+      +/-
+    </button>
+
+    <button class="calculator-button special-button"
+            (click)="percent()"
+            type="button">%
+    </button>
+
+    <button class="calculator-button"
+            (click)="setOperator('/')"
+            [ngClass]="{ 'operator-button-selected':markButton === '/', 'operator-button': markButton !== '/' }"
+            type="button">÷
+    </button>
+
+    <span *ngFor="let i of numberButtonSequence">
+    <button class="calculator-button number-button"
+            (click)="setNumber(i)">{{i}}
+    </button>
+  </span>
+
+    <button class="calculator-button multiply-button" (click)="setOperator('*')"
+            [ngClass]="{ 'operator-button-selected': markButton === '*', 'operator-button': markButton !== '*' }"
+            type="button">x
+    </button>
+
+
+    <button class="calculator-button minus-button"
+            (click)="setOperator('-')"
+            [ngClass]="{ 'operator-button-selected':markButton === '-', 'operator-button': markButton !== '-' }"
+            type="button">-
+    </button>
+
+    <button class="calculator-button" (click)="setOperator('+')"
+            [ngClass]="{ 'operator-button-selected': markButton === '+', 'operator-button': markButton !== '+' }"
+            type="button">+
+    </button>
+
+    <button class="wide-number-button" (click)="setNumber('0')" type="button">
+      &nbsp;<span>&nbsp;0</span>
+    </button>
+
+    <button class="calculator-button number-button"
+            type="button"
+            (click)="setNumber('.')">,
+    </button>
+
+    <button class="calculator-button operator-button"
+            (click)="calculate()"
+            type="button">=
+    </button>
+  </div>
+  </div>
+</ion-content>
